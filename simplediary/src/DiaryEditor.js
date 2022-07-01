@@ -7,6 +7,15 @@ const DiaryEditor = () => {
     content: "",
   });
     
+    const handleChangeState = (e) => {
+        console.log(e.target.name);
+        console.log(e.target.value);
+        setState({
+            ...state,
+            [e.target.name]:e.target.value,
+        })
+    }
+    
   return (
     <div className="DiaryEditor">
       <h2>오늘의 일기</h2>
@@ -14,25 +23,14 @@ const DiaryEditor = () => {
         <input
           name="author"
           value={state.author}
-          // 값이 바뀌었을 때
-          onChange={(e) => {
-              setState({
-                  // 순서 바꾸면 안됨
-                  ...state,
-                  author: e.target.value, // 이게 앞으로 가면, ...state값이 덮어써서 안바뀌게 된다.
-              });
-          }}
+          onChange={handleChangeState}
         />
       </div>
       <div>
-        <textarea
-          value={state.content}
-          onChange={(e) => {
-              setState({
-                ...state,
-                content: e.target.value,
-              });
-          }}
+        <textarea 
+            name="content" 
+            value={state.content} 
+            onChange={handleChangeState} 
         />
       </div>
     </div>

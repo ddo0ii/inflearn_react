@@ -13,15 +13,19 @@ function App() {
       color: "red"
     },
     bold_text: {
-     color: "green"
+      color: "green"
     }
-  }
+  };
+
+  const number = 5;
 
   return (
     <div style={style.App}>
       <MyHeader />
-      <h2 style={style.h2}>Hello React! {name}</h2>
-      <b style={style.bold_text} id="bold_text">React.js</b>
+      <h2 style={style.h2}>Hello React!</h2>
+      <b style={style.bold_text} id="bold_text">
+        {number}는 : {number % 2 === 0 ? "짝수" : "홀수"}
+      </b>
     </div>
   );
 }

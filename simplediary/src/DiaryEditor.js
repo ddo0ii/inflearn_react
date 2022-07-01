@@ -16,8 +16,8 @@ const DiaryEditor = () => {
           // 값이 바뀌었을 때
           onChange={(e) => {
               setState({
+                  ...state,
                   author: e.target.value,
-                  content: state.content
               });
           }}
         />
@@ -26,10 +26,10 @@ const DiaryEditor = () => {
         <textarea
           value={state.content}
           onChange={(e) => {
-            setState({
-              content: e.target.value,
-              author: state.author,
-            });
+              setState({
+                ...state,
+                content: e.target.value,
+              });
           }}
         />
       </div>

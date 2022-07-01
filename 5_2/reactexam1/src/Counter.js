@@ -20,4 +20,10 @@ const Counter = ({initialValue}) => {
       </div>
     );
 }
+
+// props값이 없는 것을 대비해서
+Counter.defaultProps = {
+    initialValue: 0
+}
+
 export default Counter;

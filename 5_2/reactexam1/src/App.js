@@ -6,10 +6,19 @@ import MyHeader from './MyHeader';
 function App() {
   const number = 5;
 
+  const counterProps = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: 5,
+    initialValue: 5
+  }
+
   return (
     <div>
       <MyHeader />
-      <Counter a={1} initialValue={5} />
+      <Counter {...counterProps} />
     </div>
   );
 }

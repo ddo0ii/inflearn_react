@@ -1,10 +1,8 @@
 // 상태 사용하겠다.
 import React, { useState } from "react";
 
-const Counter = (props) => {
-    console.log(props);
-    
-    const [count, setCount] = useState(0);
+const Counter = ({initialValue}) => {
+    const [count, setCount] = useState(initialValue);
 
     const onIncrease = () => {
       setCount(count + 1);

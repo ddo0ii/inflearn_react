@@ -6,6 +6,7 @@ const DiaryEditor = () => {
     author: "",
     content: "",
   });
+    
   return (
     <div className="DiaryEditor">
       <h2>오늘의 일기</h2>
@@ -16,8 +17,9 @@ const DiaryEditor = () => {
           // 값이 바뀌었을 때
           onChange={(e) => {
               setState({
+                  // 순서 바꾸면 안됨
                   ...state,
-                  author: e.target.value,
+                  author: e.target.value, // 이게 앞으로 가면, ...state값이 덮어써서 안바뀌게 된다.
               });
           }}
         />

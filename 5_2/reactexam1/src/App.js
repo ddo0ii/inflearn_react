@@ -4,10 +4,12 @@ import Counter from "./Counter";
 import MyHeader from './MyHeader';
 
 function App() {
+  const number = 5;
+
   return (
     <div>
       <MyHeader />
-      <Counter />
+      <Counter a={1} initialValue={5} />
     </div>
   );
 }

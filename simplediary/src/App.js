@@ -45,10 +45,14 @@ const App = () =>  {
     setData([newItem, ...data]); // 새로운 일기를 제일 위로 보내기 위해서
   };
 
+  const onDelete = (targetId) => {
+    console.log(`${targetId}가 삭제되었습니다.`);
+  }
+
   return (
     <div className="App">
       <DiaryEditor onCreate={onCreate} />
-      <DiaryList diaryList={data} />
+      <DiaryList onDelete={onDelete} diaryList={data} />
     </div>
   );
 }

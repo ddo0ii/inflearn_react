@@ -45,7 +45,7 @@ const App = () =>  {
     setData([newItem, ...data]); // 새로운 일기를 제일 위로 보내기 위해서
   };
 
-  const onDelete = (targetId) => {
+  const onRemove = (targetId) => {
     console.log(`${targetId}가 삭제되었습니다.`);
     // filter 기능을 통해 그 부분만 빼고 출력 된다.
     const newDiaryList = data.filter((it) => it.id !== targetId);
@@ -55,7 +55,7 @@ const App = () =>  {
   return (
     <div className="App">
       <DiaryEditor onCreate={onCreate} />
-      <DiaryList onDelete={onDelete} diaryList={data} />
+      <DiaryList onRemove={onRemove} diaryList={data} />
     </div>
   );
 }

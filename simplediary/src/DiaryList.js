@@ -16,7 +16,7 @@ const DiaryList = ({ onRemove, diaryList }) => {
 
 // defaultProps는 undefined로 전달 될 수 있는 값을 default로 설정해주는 것
 DiaryList.defaultProps = {
-    diaryList: []
-}
+  diaryList: [],
+};
 
 export default DiaryList;

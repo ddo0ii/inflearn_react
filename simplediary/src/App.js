@@ -47,6 +47,9 @@ const App = () =>  {
 
   const onDelete = (targetId) => {
     console.log(`${targetId}가 삭제되었습니다.`);
+    // filter 기능을 통해 그 부분만 빼고 출력 된다.
+    const newDiaryList = data.filter((it) => it.id !== targetId);
+    console.log(newDiaryList);
   }
 
   return (

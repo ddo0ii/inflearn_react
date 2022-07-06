@@ -1,36 +1,45 @@
 import React, { useState, useEffect } from "react";
 
-// useEffect로 state 변화를 console로 확인할 수 있다.
-// React.memo 사용
-// Prop인 text가 변하지 않는이상 다시 렌더링 하지 않는다.
-const Textview = React.memo(({ text }) => {
+const CounterA = React.memo(({ count }) => {
   useEffect(() => {
-    console.log(`Update :: Text : ${text}`);
-  });
-  return <div>{text}</div>;
-});
-
-const Countview = React.memo(({ count }) => {
-  useEffect(() => {
-    console.log(`Update :: Count : ${count}`);
+    console.log(`CounterA Update - count : ${count}`);
   });
   return <div>{count}</div>;
 });
 
+const CounterB = React.memo(({ obj }) => {
+  useEffect(() => {
+    console.log(`CounterB Update - count : ${obj.count}`);
+  });
+  return <div>{obj.count}</div>;
+});
+
 const OptimizeTest = () => {
   const [count, setCount] = useState(1);
-  const [text, setText] = useState("");
+  const [obj, setObj] = useState({
+    count: 1,
+  });
   return (
     <div style={{ padding: 50 }}>
       <div>
-        <h2>count</h2>
-        <Countview count={count} />
-        <button onClick={() => setCount(count + 1)}>+</button>
+        <h2>Counter A</h2>
+        <CounterA count={count} />
+        {/* 기본 값이 1이기 때문에 상태변화가 없어서 console이 출력되지 않는다. */}
+        <button onClick={() => setCount(count)}>A button</button>
       </div>
       <div>
-        <h2>text</h2>
-        <Textview text={text} />
-        <input value={text} onChange={(e) => setText(e.target.value)} />
+        <h2>Count B</h2>
+        {/* obj는 객체이기 때문에(객체는 얕은 비교를 하기 때문) 상태변화가 일어나서 console로 나타나는 것을 확인할 수 있다. */}
+        <CounterB obj={obj} />
+        <button
+          onClick={() =>
+            setObj({
+              count: obj.count,
+            })
+          }
+        >
+          B button
+        </button>
       </div>
     </div>
   );

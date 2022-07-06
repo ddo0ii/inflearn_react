@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 
 // useEffect로 state 변화를 console로 확인할 수 있다.
-const Textview = ({ text }) => {
+// React.memo 사용
+// Prop인 text가 변하지 않는이상 다시 렌더링 하지 않는다.
+const Textview = React.memo(({ text }) => {
   useEffect(() => {
     console.log(`Update :: Text : ${text}`);
   });
   return <div>{text}</div>;
-};
+});
 
-const Countview = ({ count }) => {
+const Countview = React.memo(({ count }) => {
   useEffect(() => {
     console.log(`Update :: Count : ${count}`);
   });
   return <div>{count}</div>;
-};
+});
 
 const OptimizeTest = () => {
   const [count, setCount] = useState(1);

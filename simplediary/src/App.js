@@ -46,26 +46,24 @@ const App = () => {
     setData((data) => [newItem, ...data]); // 새로운 일기를 제일 위로 보내기 위해서
   }, []);
 
-  const onRemove = (targetId) => {
+  const onRemove = useCallback((targetId) => {
     // filter 기능을 통해 그 부분만 빼고 출력 된다.
-    const newDiaryList = data.filter((it) => it.id !== targetId);
-    setData(newDiaryList);
-  };
+    setData((data) => data.filter((it) => it.id !== targetId));
+  }, []);
 
-  const onEdit = (targetId, newContent) => {
-    setData(
+  const onEdit = useCallback((targetId, newContent) => {
+    setData((data) =>
       data.map((it) =>
         it.id === targetId ? { ...it, content: newContent } : it
       )
     );
-  };
+  }, []);
 
   // Memoization
   const getDiaryAnalysis = useMemo(() => {
     if (data.length === 0) {
       return { goodcount: 0, badCount: 0, goodRatio: 0 };
     }
-    console.log("일기 분석 시작");
 
     const goodCount = data.filter((it) => it.emotion >= 3).length;
     const badCount = data.length - goodCount;

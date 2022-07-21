@@ -8,42 +8,43 @@ import DiaryList from "./DiaryList";
 const reducer = (state, action) => {
   // switch를 이용하여 상태변화를 다르게 한다.
   // reducer가 반환하는 값이 data의 값이 된다.
-  switch(action.type) {
-    case 'INIT' : {
-      return action.data
-    }    
-    case 'CREATE': {
+  switch (action.type) {
+    case "INIT": {
+      return action.data;
+    }
+    case "CREATE": {
       // created_date는 받지 못했기에 새로 선언해준다
       const created_date = new Date().getTime();
       const newItem = {
         ...action.data,
-        created_date
-      }
-      return [newItem, ...state]
-    }    
-    case 'REMOVE': {
-      // targetId가 action.targetId가 아닌 애들만 filter하여 새로운 state를 전달해주면 된다.
-      return state.filter((it)=> it.id !== action.targetId)
+        created_date,
+      };
+      return [newItem, ...state];
     }
-    case 'EDIT': {
+    case "REMOVE": {
+      // targetId가 action.targetId가 아닌 애들만 filter하여 새로운 state를 전달해주면 된다.
+      return state.filter((it) => it.id !== action.targetId);
+    }
+    case "EDIT": {
       // state.map((it) => it.id === action.targetId?는 수정하고자 하는 targetId를 만난것이다
       // ...it은 원래 객체 값을 넣어준 다음에 content값만 action.newContent로 넣어주면 된다
       // it은 그렇게 하고 원하는 값이 아니라면 그대로 반환해 주면된다
-      return state.map((it) => it.id === action.targetId? {...it, content:action.newContent} : it)
+      return state.map((it) =>
+        it.id === action.targetId ? { ...it, content: action.newContent } : it
+      );
     }
     // 상태변화가 일어났는데 상태가 안변하면 안되니까.
     // default로! 상태를 변화시키지 않는다.(그대로 state를 반환)
-    default :
-    return state; 
+    default:
+      return state;
   }
-}
+};
 
 const App = () => {
   // 전역적으로 Data 관리할 state
   // const [data, setData] = useState([]);
 
   const [data, dispatch] = useReducer(reducer, []);
-
 
   const dataId = useRef(0);
   // data 호출
@@ -63,7 +64,7 @@ const App = () => {
     });
     //setData는 reducer함수가 하기 때문에 지워도 된다.
     // action의 type은 INIT이고 action에 필요한 데이터는 initData가 되는것이다
-    dispatch({type:'INIT', data:initData});
+    dispatch({ type: "INIT", data: initData });
   };
 
   // App component가 mount 되자마자 호출해보자
@@ -75,17 +76,20 @@ const App = () => {
 
   // useCallback사용
   const onCreate = useCallback((author, content, emotion) => {
-  // data는 newItem에 있는 것을 그대로 들고와서 쓰면된다
-    dispatch({type:'CREATE', data:{author, content, emotion, id: dataId.current}})
+    // data는 newItem에 있는 것을 그대로 들고와서 쓰면된다
+    dispatch({
+      type: "CREATE",
+      data: { author, content, emotion, id: dataId.current },
+    });
     dataId.current += 1;
   }, []);
 
   const onRemove = useCallback((targetId) => {
-    dispatch({type: "REMOVE", targetId})
+    dispatch({ type: "REMOVE", targetId });
   }, []);
 
   const onEdit = useCallback((targetId, newContent) => {
-    dispatch({type:"EDIT", targetId, newContent})
+    dispatch({ type: "EDIT", targetId, newContent });
   }, []);
 
   // Memoization

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useEffect, useRef, useReducer } from "react";
+import React, { useCallback, useMemo, useEffect, useRef, useReducer } from "react";
 import "./App.css";
 import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
@@ -40,10 +40,14 @@ const reducer = (state, action) => {
   }
 };
 
-const App = () => {
-  // 전역적으로 Data 관리할 state
-  // const [data, setData] = useState([]);
+// 먼저 일기 state를 전역적으로 도와줄 context 만들어보자
+// React가 import되어있는지 확인하고 없다면 추가해준다.
+// context도 내보내줘야하기 때문에, export default App;처럼 export해준다
+// export default는 파일당 한번밖에 못쓰고, export는 여러번 쓸 수 있는데
 
+export const DiaryStateContext = React.createContext();
+
+const App = () => {
   const [data, dispatch] = useReducer(reducer, []);
 
   const dataId = useRef(0);
@@ -107,14 +111,17 @@ const App = () => {
   const { goodCount, badCount, goodRatio } = getDiaryAnalysis;
 
   return (
-    <div className="App">
-      <DiaryEditor onCreate={onCreate} />
-      <div>전체 일기 : {data.length}</div>
-      <div>기분 좋은 일기 개수 : {goodCount}</div>
-      <div>기분 나쁜 일기 개수 : {badCount}</div>
-      <div>기분 좋은 일기 비율 : {goodRatio}</div>
-      <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data} />
-    </div>
+    // value라는 데이터로 공급을 해주어야한다.
+    <DiaryStateContext.Provider value={data}>
+      <div className="App">
+        <DiaryEditor onCreate={onCreate} />
+        <div>전체 일기 : {data.length}</div>
+        <div>기분 좋은 일기 개수 : {goodCount}</div>
+        <div>기분 나쁜 일기 개수 : {badCount}</div>
+        <div>기분 좋은 일기 비율 : {goodRatio}</div>
+        <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data} />
+      </div>
+    </DiaryStateContext.Provider>
   );
 };
 

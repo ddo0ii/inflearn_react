@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
 
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nanum Pen Script';
+  min-height: 100vh;
+  margin: 0px;
+}
+
 .App {
   padding: 20px;
   font-family: 'Nanum Pen Script', cursive;

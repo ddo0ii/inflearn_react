@@ -10,8 +10,27 @@ body {
   margin: 0px;
 }
 
+/* 가로가 650 미만일때만 작동됨 */
+/* min 또는 max로 width 최대 최소로 조건을 준다 */
+@media (min-width: 650px) {
+  .App {
+  width: 640px;
+  }
+}
+
+@media (max-width: 650px) {
+  .App {
+  width: 90vw;
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .App {
-  padding: 20px;
-  font-family: 'Nanum Pen Script', cursive;
-  font-family: 'Yeon Sung', cursive;
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
 }

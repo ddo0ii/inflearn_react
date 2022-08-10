@@ -1,4 +1,4 @@
-import { useReducer, useRef } from 'react';
+import React, { useReducer, useRef } from 'react';
 
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -37,6 +37,8 @@ const reducer = (state, action) => {
   return newState;
 }
 
+export const DiaryStateContext = React.createContext();
+
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
 
@@ -74,16 +76,18 @@ function App() {
   };
   
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/new" element={<New />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/diary/:id" element={<Diary />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <DiaryStateContext.Provider value={data}>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/new" element={<New />} />
+            <Route path="/edit" element={<Edit />} />
+            <Route path="/diary/:id" element={<Diary />} />
+          </Routes>
+        </div>
+      </BrowserRouter>      
+    </DiaryStateContext.Provider>
   );
 }
 

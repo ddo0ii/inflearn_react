@@ -1,9 +1,12 @@
+import { useState } from "react";
+
 const Home = () => {
+    // 날짜를 저장하는 state (기본값 - 현재시간)
+    const [curDate, setCurDate] = useState(new Date());
+    console.log(curDate);
+
     return (
-        <div>
-            <h1>Home</h1>
-            <p>이곳은 홈입니다.</p>
-        </div>
+        <div></div>
     )
 }
 

@@ -1,3 +1,5 @@
+import { useReducer, useRef } from 'react';
+
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -6,43 +8,74 @@ import New from './pages/New'
 import Edit from './pages/Edit'
 import Diary from './pages/Diary'
 
-// COMPONENTS
-import MyButton from './components/MyButton';
-import MyHeader from './components/MyHeader';
+const reducer = (state, action) => {
+  let newState = [];
+  switch (action.type) {
+    case 'INIT': {
+      return action.data;
+    }
+    case 'CREATE': {
+      // const newItem = {
+      //   ...action.data
+      // };
+      newState = [action.data, ...state];
+      // default까지 return 하지 않으려면 break걸어줘야함
+      break;
+    }
+    case 'REMOVE': {
+      newState = state.filter((it) => it.id !== action.targetId);
+      break;
+    }
+    case 'EDIT': {
+      // content만 바꾸는게 아니라 전체를 바꿀거기 때문에
+      newState = state.map((it) => it.id === action.data.id ? { ...action.data } : it);
+      break;
+    }
+    default:
+      return state;
+  }
+  return newState;
+}
 
 function App() {
+  const [data, dispatch] = useReducer(reducer, []);
+
+  const dataId = useRef(0);
+  // CREATE
+  // date는 언제 작성된것 까지 받을 거기 때문에 입력
+  const onCreate = (date, content, emotion) => {
+    dispatch({
+      type: "CREATE",
+      data: {
+        id: dataId.current,
+        date: new Date(date).getTime(),
+        content,
+        emotion,
+      }
+    });
+    dataId.current += 1;
+  };  
+  // REMOVE
+  const onRemove = (targetId) => {
+    dispatch({ type: "REMOVE", targetId });
+  }
+  // EDIT
+  // id만 유지하면서 다른이들은 변경
+  const onEdit = (targetId, date, content, emotion) => {
+    dispatch({
+      type: "EDIT",
+      date: {
+        id: targetId,
+        date: new Date(date).getTime(),
+        content,
+        emotion,
+      },
+    });
+  };
+  
   return (
     <BrowserRouter>
       <div className="App">
-        <MyHeader
-          headText={"App"}
-          leftChild={
-            <MyButton text={"왼쪽 버튼"} onClick={() => alert("왼쪽 클릭")} />
-          }
-          rightChild={
-            <MyButton text={"오른쪽 버튼"} onClick={() => alert("오른쪽 클릭")} />
-          }
-        />
-        <h2>App.js</h2>   
-        <MyButton
-          text={"버튼"}
-          onClick={() => alert("버튼 클릭")}
-          type={"positive"}
-        />
-        <MyButton
-          text={"버튼"}
-          onClick={() => alert("버튼 클릭")}
-          type={"negative"}
-        />
-        <MyButton
-          text={"버튼"}
-          onClick={() => alert("버튼 클릭")}
-        />
-        <MyButton
-          text={"버튼"}
-          onClick={() => alert("버튼 클릭")}
-          type={"strangebutton"}
-        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new" element={<New />} />

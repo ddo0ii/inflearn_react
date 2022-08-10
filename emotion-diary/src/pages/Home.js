@@ -6,16 +6,27 @@ import MyButton from "./../components/MyButton";
 const Home = () => {
   // 날짜를 저장하는 state (기본값 - 현재시간)
   const [curDate, setCurDate] = useState(new Date());
-  console.log(curDate);
   // 월은 +1씩 해줘야함
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1} 월`;
+
+  const increaseMonth = () => {
+    setCurDate(
+      new Date(curDate.getFullYear(), curDate.getMonth() + 1, curDate.getDate())
+    );
+  };
+
+  const decreaseMonth = () => {
+    setCurDate(
+      new Date(curDate.getFullYear(), curDate.getMonth() - 1, curDate.getDate())
+    );
+  };
 
   return (
     <div>
       <MyHeader
         headText={headText}
-        leftChild={<MyButton text={"<"} onClick={() => {}} />}
-        rightChild={<MyButton text={">"} onClick={()=>{}} />}
+        leftChild={<MyButton text={"<"} onClick={decreaseMonth} />}
+        rightChild={<MyButton text={">"} onClick={increaseMonth} />}
       />
     </div>
   );

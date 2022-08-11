@@ -18,7 +18,11 @@ const filterOptionList = [
 // optionList - select 안에 들어갈 option
 const ControlMenu = ({ value, onChange, optionList }) => {
   return (
-    <select value={value} onChange={(e) => onChange(e.target.value)}>
+    <select
+      className="ControlMenu"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+    >
       {optionList.map((it, idx) => (
         <option key={idx} value={it.value}>
           {it.name}
@@ -62,22 +66,29 @@ const DiaryList = ({ diaryList }) => {
   };
 
   return (
-    <div>
-      <ControlMenu
-        value={sortType}
-        onChange={setSortType}
-        optionList={sortOptionList}
-      />
-      <ControlMenu
-        value={filter}
-        onChange={setFilter}
-        optionList={filterOptionList}
-      />
-      <MyButton
-        type={"positive"}
-        text={"새 일기쓰기"}
-        onClick={() => navigate("/new")}
-      />
+    <div className="DiaryList">
+      <div className="menu_wrapper">
+        <div className="left_col">
+          <ControlMenu
+            value={sortType}
+            onChange={setSortType}
+            optionList={sortOptionList}
+          />
+          <ControlMenu
+            value={filter}
+            onChange={setFilter}
+            optionList={filterOptionList}
+          />
+        </div>
+        <div className="right_col">
+          <MyButton
+            type={"positive"}
+            text={"새 일기쓰기"}
+            onClick={() => navigate("/new")}
+          />
+        </div>
+      </div>
+
       {getProcessedDiaryList().map((it) => (
         <div key={it.id}>
           {it.content} {it.emotion}

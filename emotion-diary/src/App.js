@@ -40,9 +40,40 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+const dummyData = [
+  {
+    id: 1,
+    emotion: 1,
+    content: "오늘의 일기 1번",
+    data : 1660205201524
+  },
+  {
+    id: 2,
+    emotion: 2,
+    content: "오늘의 일기 2번",
+    data : 1660205201525
+  },
+  {
+    id: 3,
+    emotion: 3,
+    content: "오늘의 일기 3번",
+    data : 1660205201526
+  },
+  {
+    id: 4,
+    emotion: 4,
+    content: "오늘의 일기 4번",
+    data : 1660205201527
+  },
+  {
+    id: 5,
+    emotion: 5,
+    content: "오늘의 일기 5번",
+    data : 1660205201528
+  }
+]
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
-
+  const [data, dispatch] = useReducer(reducer, dummyData);
   const dataId = useRef(0);
   // CREATE
   // date는 언제 작성된것 까지 받을 거기 때문에 입력

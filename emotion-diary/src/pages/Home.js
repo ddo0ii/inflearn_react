@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import MyHeader from "./../components/MyHeader";
 import MyButton from "./../components/MyButton";
+import { DiaryStateContext } from "../App";
 
 const Home = () => {
+  const diaryList = useContext(DiaryStateContext);
   // 날짜를 저장하는 state (기본값 - 현재시간)
   const [curDate, setCurDate] = useState(new Date());
   // 월은 +1씩 해줘야함

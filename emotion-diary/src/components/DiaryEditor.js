@@ -1,5 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { DiaryDispatchContext } from "./../App";
 
 import MyHeader from "./MyHeader";
 import MyButton from "./MyButton";
@@ -47,11 +48,22 @@ const DiaryEditor = () => {
   // 초기 값을 toISOString로 현 date를 잘라서 넣어주면 된다.
   const [date, setDate] = useState(getStringDate(new Date()));
 
+  const { onCreate } = useContext(DiaryDispatchContext);
   const handleClickEmote = (emotion) => {
     setEmotion(emotion);
   };
 
   const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    if (content.length < 1) {
+      contentRef.current.focus();
+      return;
+    }
+    onCreate(date, content, emotion);
+    navigate("/", { replace: true });
+  };
+
   return (
     <div className="DiaryEditor">
       <MyHeader
@@ -99,7 +111,11 @@ const DiaryEditor = () => {
         <section>
           <div className="control_box">
             <MyButton text={"취소하기"} onClick={() => navigate(-1)} />
-            <MyButton text={"작성완료"} type={"positive"} onClick={() => {}} />
+            <MyButton
+              text={"작성완료"}
+              type={"positive"}
+              onClick={handleSubmit}
+            />
           </div>
         </section>
       </div>

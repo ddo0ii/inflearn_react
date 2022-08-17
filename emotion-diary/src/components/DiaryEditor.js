@@ -41,8 +41,13 @@ const getStringDate = (date) => {
 };
 
 const DiaryEditor = () => {
+  const [emotion, setEmotion] = useState(3);
   // 초기 값을 toISOString로 현 date를 잘라서 넣어주면 된다.
   const [date, setDate] = useState(getStringDate(new Date()));
+
+  const handleClickEmote = (emotion) => {
+    setEmotion(emotion);
+  };
 
   const navigate = useNavigate();
   return (
@@ -69,7 +74,12 @@ const DiaryEditor = () => {
           <h4>오늘의 감정</h4>
           <div className="input_box emotion_list_wrapper">
             {emotionList.map((it) => (
-              <EmotionItem key={it.emotion_id} {...it} />
+              <EmotionItem
+                key={it.emotion_id}
+                {...it}
+                onClick={handleClickEmote}
+                isSelected={it.emotion_id === emotion}
+              />
             ))}
           </div>
         </section>

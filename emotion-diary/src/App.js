@@ -36,23 +36,15 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+  localStorage.setItem("diary", JSON.stringify(newState));
   return newState;
 };
 
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-const dummyData = [];
-
 function App() {
-  useEffect(() => {
-    const item1 = localStorage.getItem("item1");
-    const item2 = localStorage.getItem("item2");
-    const item3 = JSON.parse(localStorage.getItem("item3"));
-    console.log({ item1, item2, item3 });
-  }, []);
-
-  const [data, dispatch] = useReducer(reducer, dummyData);
+  const [data, dispatch] = useReducer(reducer, []);
   // dummyData가 1부터 5까지이니 6부터 시작해야함
   const dataId = useRef(6);
   // CREATE

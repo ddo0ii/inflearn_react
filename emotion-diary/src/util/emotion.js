@@ -1,6 +1,5 @@
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";
-
 export const emotionList = [
   {
     emotion_id: 1,

@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
 
@@ -9,9 +10,11 @@ const DiaryItem = ({ id, emotion, content, date }) => {
 
   // 숫자데이터를 년월일로 알아보기 쉽게 변환
   const strDate = new Date(parseInt(date)).toLocaleDateString();
+
   const goDetail = () => {
     navigate(`/diary/${id}`);
   };
+
   const goEdit = () => {
     navigate(`/edit/${id}`);
   };
@@ -38,4 +41,4 @@ const DiaryItem = ({ id, emotion, content, date }) => {
   );
 };
 
-export default DiaryItem;
+export default React.memo(DiaryItem);

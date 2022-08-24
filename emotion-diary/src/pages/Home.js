@@ -3,15 +3,16 @@ import { DiaryStateContext } from "../App";
 
 import MyHeader from "./../components/MyHeader";
 import MyButton from "./../components/MyButton";
-import DiaryList from "../components/DiaryList";
+import DiaryList from "./../components/DiaryList";
 
 const Home = () => {
   const diaryList = useContext(DiaryStateContext);
+
   const [data, setData] = useState([]);
   // 날짜를 저장하는 state (기본값 - 현재시간)
   const [curDate, setCurDate] = useState(new Date());
   // 월은 +1씩 해줘야함
-  const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1} 월`;
+  const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
   // curDate가 변화할때만 일기데이터를 뽑아올 것이다.
   useEffect(() => {

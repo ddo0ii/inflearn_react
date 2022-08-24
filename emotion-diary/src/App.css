@@ -5,7 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Nanum Pen Script';
+  font-family: "Nanum Pen Script";
   min-height: 100vh;
   margin: 0px;
 }
@@ -14,13 +14,13 @@ body {
 /* min 또는 max로 width 최대 최소로 조건을 준다 */
 @media (min-width: 650px) {
   .App {
-  width: 640px;
+    width: 640px;
   }
 }
 
 @media (max-width: 650px) {
   .App {
-  width: 90vw;
+    width: 90vw;
   }
 }
 
@@ -35,7 +35,7 @@ body {
   padding-right: 20px;
 }
 
-/* MyButton */
+/*  MyButton */
 
 .MyButton {
   cursor: pointer;
@@ -50,7 +50,7 @@ body {
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: 'Nanum Pen Script';
+  font-family: "Nanum Pen Script";
 }
 
 .MyButton_default {
@@ -69,13 +69,14 @@ body {
 }
 
 /* HEADER */
+
 header {
   padding-top: 20px;
   padding-bottom: 20px;
 
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #e2e2ee;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 header > div {
@@ -99,7 +100,7 @@ header .head_btn_right {
 }
 
 header button {
-  font-family: 'Nanum Pen Script';
+  font-family: "Nanum Pen Script";
 }
 
 /* DiaryList */
@@ -132,11 +133,11 @@ header button {
   padding-right: 20px;
 
   cursor: pointer;
-  font-family: 'Nanum Pen Script';
+  font-family: "Nanum Pen Script";
   font-size: 18px;
 }
 
-/* DiaryItem */
+/* DiaryITem */
 
 .DiaryItem {
   padding-top: 15px;
@@ -159,31 +160,27 @@ header button {
 
 .DiaryItem .emotion_img_wrapper_1 {
   background-color: #64c964;
-} 
-
+}
 .DiaryItem .emotion_img_wrapper_2 {
   background-color: #9dd772;
-} 
-
+}
 .DiaryItem .emotion_img_wrapper_3 {
   background-color: #fdce17;
-} 
-
+}
 .DiaryItem .emotion_img_wrapper_4 {
   background-color: #fd8446;
-} 
-
+}
 .DiaryItem .emotion_img_wrapper_5 {
   background-color: #fd565f;
-} 
+}
 
 .DiaryItem .emotion_img_wrapper img {
   width: 50%;
-} 
+}
 
 .DiaryItem .info_wrapper {
   flex-grow: 1;
-  margin: 20px;
+  margin-left: 20px;
   cursor: pointer;
 }
 
@@ -202,8 +199,8 @@ header button {
 }
 
 /* DiaryEditor */
-.DiaryEditor {
 
+.DiaryEditor {
 }
 
 .DiaryEditor section {
@@ -224,9 +221,9 @@ header button {
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  
+
   cursor: pointer;
-  font-family: 'Nanum Pen Script';
+  font-family: "Nanum Pen Script";
   font-size: 20px;
 }
 
@@ -237,7 +234,7 @@ header button {
 }
 
 .DiaryEditor textarea {
-  font-family: 'Nanum Pen Script';
+  font-family: "Nanum Pen Script";
   font-size: 20px;
 
   box-sizing: border-box;
@@ -258,7 +255,8 @@ header button {
   align-items: center;
 }
 
-/* EmotionItem */
+/* EMOTION ITEM */
+
 .EmotionItem {
   cursor: pointer;
 
@@ -287,35 +285,32 @@ header button {
 
 .EmotionItem_on_1 {
   background-color: #64c964;
-  color: white
+  color: white;
 }
 
 .EmotionItem_on_2 {
   background-color: #9dd772;
-  color: white
+  color: white;
 }
-
 .EmotionItem_on_3 {
   background-color: #fdce17;
-  color: white
+  color: white;
 }
-
 .EmotionItem_on_4 {
   background-color: #fd8446;
-  color: white
+  color: white;
 }
-
 .EmotionItem_on_5 {
   background-color: #fd565f;
-  color: white
+  color: white;
 }
 
 /* Diary */
-.DiaryPage {
 
+.DiaryPage {
 }
 
-.DiaryPage section{
+.DiaryPage section {
   width: 100%;
   margin-bottom: 100px;
 
@@ -325,7 +320,7 @@ header button {
   text-align: center;
 }
 
-.DiaryPage h4{
+.DiaryPage h4 {
   font-size: 22px;
   font-weight: bold;
 }
@@ -344,19 +339,15 @@ header button {
 .DiaryPage .diary_img_wrapper_1 {
   background-color: #64c964;
 }
-
 .DiaryPage .diary_img_wrapper_2 {
   background-color: #9dd772;
 }
-
 .DiaryPage .diary_img_wrapper_3 {
   background-color: #fdce17;
 }
-
 .DiaryPage .diary_img_wrapper_4 {
   background-color: #fd8446;
 }
-
 .DiaryPage .diary_img_wrapper_5 {
   background-color: #fd565f;
 }
@@ -370,9 +361,7 @@ header button {
   width: 100%;
   background-color: #ececec;
   border-radius: 5px;
-  /* 단어끊어서 줄바꿈하지말라 */
   word-break: keep-all;
-  /* 줄바꿈해라 */
   overflow-wrap: break-word;
 }
 
@@ -380,7 +369,7 @@ header button {
   padding: 20px;
   text-align: left;
   font-size: 20px;
-  font-family: "Yeon sung";
+  font-family: "Yeon Sung";
   font-weight: 400;
   line-height: 2.5;
 }

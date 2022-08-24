@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
 import { getStringDate } from "../util/date";
@@ -20,7 +20,7 @@ const Diary = () => {
       );
 
       if (targetDiary) {
-        //   일기가 존재할 때
+        // 일기가 존재할 때
         setData(targetDiary);
       } else {
         // 일기가 없을 때

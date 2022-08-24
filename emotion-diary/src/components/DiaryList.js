@@ -1,17 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
 import DiaryItem from "./DiaryItem";
 
 const sortOptionList = [
   { value: "latest", name: "최신순" },
-  { value: "oldest", name: "오래된순" },
+  { value: "oldest", name: "오래된 순" },
 ];
 
 const filterOptionList = [
-  { value: "all", name: "전부 다" },
+  { value: "all", name: "전부다" },
   { value: "good", name: "좋은 감정만" },
-  { value: "bad", name: "안 좋은 감정만" },
+  { value: "bad", name: "안좋은 감정만" },
 ];
 
 // value - select가 어떤것을 선택하고 있는지
@@ -60,9 +60,10 @@ const DiaryList = ({ diaryList }) => {
     // 이렇게 하고 copyList에 넣어주는 것이다
     // 그래서 값만 건드리고 원본은 건드리지 않고 수행했음을 알 수 있다
     const copyList = JSON.parse(JSON.stringify(diaryList));
-    const filterLists =
+    const filteredList =
       filter === "all" ? copyList : copyList.filter((it) => filterCallBack(it));
-    const sortedList = filterLists.sort(compare);
+
+    const sortedList = filteredList.sort(compare);
     return sortedList;
   };
 

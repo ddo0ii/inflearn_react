@@ -365,3 +365,22 @@ header button {
   font-size: 25px;
   color: white;
 }
+
+.DiaryPage .diary_content_wrapper {
+  width: 100%;
+  background-color: #ececec;
+  border-radius: 5px;
+  /* 단어끊어서 줄바꿈하지말라 */
+  word-break: keep-all;
+  /* 줄바꿈해라 */
+  overflow-wrap: break-word;
+}
+
+.DiaryPage .diary_content_wrapper p {
+  padding: 20px;
+  text-align: left;
+  font-size: 20px;
+  font-family: "Yeon sung";
+  font-weight: 400;
+  line-height: 2.5;
+}

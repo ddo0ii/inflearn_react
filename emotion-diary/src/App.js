@@ -45,8 +45,25 @@ export const DiaryDispatchContext = React.createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
+
+  // App 컴포넌트가 mount되었을 때
+  useEffect(() => {
+    const localData = localStorage.getItem("diary");
+    // localData가 있을 때
+    if (localData) {
+      // localStorage가 가지는 값중에 가장 큰 id 값보다 1크게 설정해주기위해 sort
+      const diaryList = JSON.parse(localData).sort(
+        (a, b) => parseInt(b.id) - parseInt(a.id)
+      );
+      dataId.current = parseInt(diaryList[0].id) + 1;
+
+      console.log(diaryList);
+      console.log(dataId);
+    }
+  });
+
   // dummyData가 1부터 5까지이니 6부터 시작해야함
-  const dataId = useRef(6);
+  const dataId = useRef(0);
   // CREATE
   // date는 언제 작성된것 까지 받을 거기 때문에 입력
   const onCreate = (date, content, emotion) => {

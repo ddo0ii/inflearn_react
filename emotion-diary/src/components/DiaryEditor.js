@@ -19,7 +19,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
   // 초기 값을 toISOString로 현 date를 잘라서 넣어주면 된다.
   const [date, setDate] = useState(getStringDate(new Date()));
 
-  const { onCreate, onEdit } = useContext(DiaryDispatchContext);
+  const { onCreate, onEdit, onRemove } = useContext(DiaryDispatchContext);
   const handleClickEmote = (emotion) => {
     setEmotion(emotion);
   };
@@ -43,7 +43,15 @@ const DiaryEditor = ({ isEdit, originData }) => {
         onEdit(originData.id, date, content, emotion);
       }
     }
+    // replace: true는 뒤로가기가 안되게 하기 위해
     navigate("/", { replace: true });
+  };
+
+  const handleRemove = () => {
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      onRemove(originData.id);
+      navigate("/", { replace: true });
+    }
   };
 
   // newpage가 아니라 editpage에서만 작동하도록
@@ -61,6 +69,15 @@ const DiaryEditor = ({ isEdit, originData }) => {
         headText={isEdit ? "일기 수정하기" : "새 일기쓰기"}
         leftChild={
           <MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)} />
+        }
+        rightChild={
+          isEdit && (
+            <MyButton
+              text={"삭제하기"}
+              type={"negative"}
+              onClick={handleRemove}
+            />
+          )
         }
       />
       <div>

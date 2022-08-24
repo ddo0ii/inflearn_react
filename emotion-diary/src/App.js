@@ -77,7 +77,8 @@ const dummyData = [
 
 function App() {
   const [data, dispatch] = useReducer(reducer, dummyData);
-  const dataId = useRef(0);
+  // dummyData가 1부터 5까지이니 6부터 시작해야함
+  const dataId = useRef(6);
   // CREATE
   // date는 언제 작성된것 까지 받을 거기 때문에 입력
   const onCreate = (date, content, emotion) => {

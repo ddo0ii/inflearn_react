@@ -6,8 +6,8 @@ import MyHeader from "./MyHeader";
 import MyButton from "./MyButton";
 import EmotionItem from "./EmotionItem";
 
-import { getStringDate } from "../util/date";
-import { emotionList } from "../util/emotion";
+import { getStringDate } from "../util/date.js";
+import { emotionList } from "../util/emotion.js";
 
 const env = process.env;
 env.PUBLIC_URL = env.PUBLIC_URL || "";

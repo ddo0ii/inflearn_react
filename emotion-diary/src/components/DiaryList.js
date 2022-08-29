@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
 import DiaryItem from "./DiaryItem";
@@ -17,7 +17,10 @@ const filterOptionList = [
 // value - select가 어떤것을 선택하고 있는지
 // onChange - select가 변경했을 때 바꿀 함수
 // optionList - select 안에 들어갈 option
-const ControlMenu = ({ value, onChange, optionList }) => {
+const ControlMenu = React.memo(({ value, onChange, optionList }) => {
+  useEffect(()=> {
+    console.log("Control Menu");
+  })
   return (
     <select
       className="ControlMenu"
@@ -31,13 +34,21 @@ const ControlMenu = ({ value, onChange, optionList }) => {
       ))}
     </select>
   );
-};
+});
 
 const DiaryList = ({ diaryList }) => {
   const navigate = useNavigate();
   // 정렬 (초기값 - latest)
   const [sortType, setSortType] = useState("latest");
   const [filter, setFilter] = useState("all");
+
+  const handleSetSortType = (sortType) => {
+    setSortType(sortType);
+  }
+
+  const handleSetFilter = (filter) => {
+    setFilter(filter);
+  }
 
   const getProcessedDiaryList = () => {
     const filterCallBack = (item) => {
@@ -73,12 +84,12 @@ const DiaryList = ({ diaryList }) => {
         <div className="left_col">
           <ControlMenu
             value={sortType}
-            onChange={setSortType}
+            onChange={handleSetSortType}
             optionList={sortOptionList}
           />
           <ControlMenu
             value={filter}
-            onChange={setFilter}
+            onChange={handleSetFilter}
             optionList={filterOptionList}
           />
         </div>

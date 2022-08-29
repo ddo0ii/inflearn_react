@@ -42,14 +42,6 @@ const DiaryList = ({ diaryList }) => {
   const [sortType, setSortType] = useState("latest");
   const [filter, setFilter] = useState("all");
 
-  const handleSetSortType = (sortType) => {
-    setSortType(sortType);
-  }
-
-  const handleSetFilter = (filter) => {
-    setFilter(filter);
-  }
-
   const getProcessedDiaryList = () => {
     const filterCallBack = (item) => {
       if (filter === "good") {
@@ -84,12 +76,12 @@ const DiaryList = ({ diaryList }) => {
         <div className="left_col">
           <ControlMenu
             value={sortType}
-            onChange={handleSetSortType}
+            onChange={setSortType}
             optionList={sortOptionList}
           />
           <ControlMenu
             value={filter}
-            onChange={handleSetFilter}
+            onChange={setFilter}
             optionList={filterOptionList}
           />
         </div>

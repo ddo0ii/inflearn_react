@@ -21,4 +21,5 @@ const EmotionItem = ({
   );
 };
 
+// React.memo를 통해 재생성하지 않도록 최적화
 export default React.memo(EmotionItem);

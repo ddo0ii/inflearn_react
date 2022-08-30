@@ -41,4 +41,5 @@ const DiaryItem = ({ id, emotion, content, date }) => {
   );
 };
 
+// React.memo를 사용하여 필터는 잘 적용이 되지만, 아이템 자체가 렌더링 되지 않도록 최적화
 export default React.memo(DiaryItem);

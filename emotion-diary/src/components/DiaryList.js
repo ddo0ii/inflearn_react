@@ -18,9 +18,6 @@ const filterOptionList = [
 // onChange - select가 변경했을 때 바꿀 함수
 // optionList - select 안에 들어갈 option
 const ControlMenu = React.memo(({ value, onChange, optionList }) => {
-  useEffect(()=> {
-    console.log("Control Menu");
-  })
   return (
     <select
       className="ControlMenu"

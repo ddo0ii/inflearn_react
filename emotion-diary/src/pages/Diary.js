@@ -13,10 +13,10 @@ const Diary = () => {
   const navigate = useNavigate();
   const [data, setData] = useState();
 
-  useEffect(()=>{
+  useEffect(() => {
     const titleElement = document.getElementsByTagName("title")[0];
     titleElement.innerHTML = `감정 일기장 - ${id}번 읽기`;
-  })
+  }, []);
 
   useEffect(() => {
     if (diaryList.length >= 1) {

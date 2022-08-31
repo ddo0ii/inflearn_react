@@ -14,6 +14,11 @@ const Home = () => {
   // 월은 +1씩 해줘야함
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `감정 일기장`;
+  }, []);
+
   // curDate가 변화할때만 일기데이터를 뽑아올 것이다.
   useEffect(() => {
     if (diaryList.length >= 1) {

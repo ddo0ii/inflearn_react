@@ -57,6 +57,7 @@ function App() {
         (a, b) => parseInt(b.id) - parseInt(a.id)
       );
 
+      // 등록된 글이 없을때 일어나는 에러를 방지하기 위해 if문 사용
       if (diaryList.length >= 1) {
         dataId.current = parseInt(diaryList[0].id) + 1;
         dispatch({ type: "INIT", data: diaryList });

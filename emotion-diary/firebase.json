@@ -1,5 +1,6 @@
 {
-  "hosting": {
+  "hosting": {    
+    "site": "ddo0ii-udemy-project",
     "public": "build",
     "ignore": [
       "firebase.json",

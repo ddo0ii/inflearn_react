@@ -21,9 +21,8 @@ Github : https://github.com/ddo0ii/inflearn_react
 <br/>
 
 Blog : [블로그로 이동하기](https://ddo-development.tistory.com/category/React/%ED%95%9C%EC%9E%85%20%ED%81%AC%EA%B8%B0%EB%A1%9C%20%EC%9E%98%EB%9D%BC%20%EB%A8%B9%EB%8A%94%20%EB%A6%AC%EC%95%A1%ED%8A%B8%28React.js%29)
-
-Hosting Site : https://ddo0ii-udemy-project.web.app/
-
+<br/>
+Hosting Site : https://ddo0ii-udemy-project.web.app/ <br/>
 Lecture Site : [강의사이트로 이동하기](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%EB%A6%AC%EC%95%A1%ED%8A%B8)
 
 <br/><br/>

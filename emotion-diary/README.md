@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# 감정일기장
+<br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+[한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지 이동하기](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%EB%A6%AC%EC%95%A1%ED%8A%B8)
 
-### `npm start`
+<br/>
+수강사이트 | Inflearn <br/>
+강사 | 이정환 Winterlood <br/>
+사용 기술 | React.js, Javascript, Node.js, Firebase 
+<br/><br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Inflearn의 한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지강의를 통해 JavaScript와 React의 기초적인 개념을 Blog에 기록하며 학습하였다. 최종적으로 React.js를 이용하여 감정일기장을 제작하고 Firebase를 이용하여 프로젝트를 배포하였다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br/>
+Github : https://github.com/ddo0ii/inflearn_react 
 
-### `npm test`
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Blog : [블로그로 이동하기](https://ddo-development.tistory.com/category/React/%ED%95%9C%EC%9E%85%20%ED%81%AC%EA%B8%B0%EB%A1%9C%20%EC%9E%98%EB%9D%BC%20%EB%A8%B9%EB%8A%94%20%EB%A6%AC%EC%95%A1%ED%8A%B8%28React.js%29)
+<br/>
+Hosting Site : https://ddo0ii-udemy-project.web.app/ <br/>
+Lecture Site : [강의사이트로 이동하기](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%EB%A6%AC%EC%95%A1%ED%8A%B8)
 
-### `npm run build`
+<br/><br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## - Functions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br/>
+1. React DOM 조작 - useRef <br/>
+2. React Lifiecycle 제어 - useEffect <br/>
+3. React API 호출 <br/>
+4. 최적화(useMemo, React.memo, useCallback) <br/>
+5. useReducer, Context <br/>
+6. React Router, 페이지 구현 <br/>
+7. LocalStorage를 일기데이터베이스로 사용 <br/>
+8. 프로젝트 빌드 및 배포 <br/>
+9. Open Graph 설정

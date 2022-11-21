@@ -1,44 +1,41 @@
-# PWA를 활용한 웹 푸시 알림 시스템 (진동벨이 필요 없는 카페 주문 완료 알림 시스템 제작)
+# 감정일기장
+<br/>
 
-2018년 봄학기 캡스톤 축제 <br/>
-팀명 | 청울림 <br/>
-지도교수 | 황성수 교수님 <br/>
-팀원 | 김응준, 권소영, 심소정 <br/>
+### 한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지
+
+<br/>
+
+[한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지 이동하기](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%EB%A6%AC%EC%95%A1%ED%8A%B8)
+
+<br/>
+수강사이트 | Inflearn <br/>
+강사 | 이정환 Winterlood <br/>
+사용 기술 | React.js, Javascript, Node.js, Firebase 
 <br/><br/>
 
 ### Inflearn의 한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지강의를 통해 JavaScript와 React의 기초적인 개념을 Blog에 기록하며 학습하였다. 최종적으로 React.js를 이용하여 감정일기장을 제작하고 Firebase를 이용하여 프로젝트를 배포하였다.
 
 <br/>
 
-Github : [Github Site로 이동하기](https://github.com/ddo0ii/capstone)
+Github : [Github Site로 이동하기](https://github.com/ddo0ii/inflearn_react/tree/main/emotion-diary)
 
-Youtube : [Youtube Site로 이동하기](https://youtu.be/5CEzAd3kDtg)
+Blog : [Blog로 이동하기](https://ddo-development.tistory.com/category/React/%ED%95%9C%EC%9E%85%20%ED%81%AC%EA%B8%B0%EB%A1%9C%20%EC%9E%98%EB%9D%BC%20%EB%A8%B9%EB%8A%94%20%EB%A6%AC%EC%95%A1%ED%8A%B8%28React.js%29)
+
+Hosting Site : [Hosting Site로 이동하기](https://ddo0ii-udemy-project.web.app/)
+
+Lecture Site : [Lecture Site로 이동하기](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%EB%A6%AC%EC%95%A1%ED%8A%B8)
 
 <br/>
 
-## - 과제의 필요성
-모바일 어플리케이션을 통해 지원되는 기존의 푸시 알림 서비스는 사용자가 관심 분야의 정보를 받아볼 수 있기 때문에 유용하다. 
-그러나, 기존의 푸시 알림 서비스는 사용 측면에서 명확한 한계를 가진다. 이에 개선된 형태의 푸시 알림 시스템이 요구된다.
-
-## - 문제 정의
-PWA를 활용하여 웹 기반의 푸시 알림 시스템을 구현한다.
-
 ## - Functions
-1.  구독자 관리 기능
- - 구독자 정보의  열람/수정/삭제
-2.  푸시알림 기능
- - 스마트폰으로 푸시를 보내고 알림 메시지를 화면에 보여줌
-3.  이벤트 기능
- - 이벤트 추가/삭제, 다수의 구독자에게 이벤트 정보를 푸시
-4.  타이머 기능
-- 푸시를 보낼 시간 설정
 
-## - 주요 기술
-1. 실시간 알림 수신 
-Service Worker API를 사용  웹 브라우저를 종료해도 실시간으로 푸시알림을 수신하여 메시지를 보여줌
-2. 편리한 구독 신청
-다운로드나 로그인 없이 클릭 한 번으로 이용 가능
-3. 시스템 보안
-네트워크 통신간 보안 대책 강구
- - Let's Encrypt CA 인증서 취득 - HTTPS 통신 사용
- - VAPID Key를 사용하여 푸시 통신 간 보안 강화
+<br/>
+1. React DOM 조작 - useRef <br/>
+2. React Lifiecycle 제어 - useEffect <br/>
+3. React API 호출 <br/>
+4. 최적화(useMemo, React.memo, useCallback) <br/>
+5. useReducer, Context <br/>
+6. React Router, 페이지 구현 <br/>
+7. LocalStorage를 일기데이터베이스로 사용 <br/>
+8. 프로젝트 빌드 및 배포 <br/>
+9. Open Graph 설정

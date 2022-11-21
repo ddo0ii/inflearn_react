@@ -16,7 +16,7 @@
 ### Inflearn의 한입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지강의를 통해 JavaScript와 React의 기초적인 개념을 Blog에 기록하며 학습하였다. 최종적으로 React.js를 이용하여 감정일기장을 제작하고 Firebase를 이용하여 프로젝트를 배포하였다.
 
 <br/>
-Github : https://github.com/ddo0ii/inflearn_react 
+Github : https://github.com/ddo0ii/inflearn_react/tree/main/emotion-diary
 
 <br/>
 

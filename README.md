@@ -25,6 +25,8 @@ Hosting Site : [Hosting Site로 이동하기](https://ddo0ii-udemy-project.web.a
 
 Lecture Site : [Lecture Site로 이동하기](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%EB%A6%AC%EC%95%A1%ED%8A%B8)
 
+YouTube Site : [YouTube Site로 이동하기](https://youtu.be/hE4qm1l6Da4)
+
 <br/>
 
 ## - Functions
